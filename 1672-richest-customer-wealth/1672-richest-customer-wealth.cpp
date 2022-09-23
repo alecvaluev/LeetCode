@@ -21,7 +21,7 @@ public:
         
         for(auto& row: accounts){
             int sum = 0;
-            for(auto col: row){
+            for(auto& col: row){
                 sum += col;        
             }
             reachest = max(sum, reachest);
