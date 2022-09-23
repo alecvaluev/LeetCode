@@ -11,7 +11,7 @@ public:
             for(int j = 0; j < cols; j++){
                 sum += accounts[i][j];        
             }
-            if(sum > reachest) reachest = sum;
+            reachest = max(sum, reachest);
         }
         return reachest;
     }
