@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
-        // solution O(n^2)
+        // solution O(n^2) time
         /*int rows = accounts.size();
         int cols = accounts[0].size();
         int reachest = 0;
@@ -15,6 +15,7 @@ public:
         }
         return reachest;*/
         
+        //solution 2
         // less space
         int reachest = 0;
         
