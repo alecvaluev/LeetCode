@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
+        //T-O(n) S-O(1)
         int n = s.size();
         if(n != t.size()) return false;
         
