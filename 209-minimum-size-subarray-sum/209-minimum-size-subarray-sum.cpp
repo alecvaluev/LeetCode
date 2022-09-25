@@ -9,7 +9,7 @@ public:
             minLength = n + 1,
             sum = 0;
         
-        for(int winEnd = 0; winEnd < nums.size(); winEnd++){
+        for(int winEnd = 0; winEnd < n; winEnd++){
             sum += nums[winEnd];
             
             while(sum >= target){
