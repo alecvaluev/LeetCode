@@ -6,7 +6,7 @@ public:
         //optimized - O(n)
         int winStart = 0,
             n = nums.size(),
-            minLength = n + 1,
+            minLength = INT_MAX,
             sum = 0;
         
         for(int winEnd = 0; winEnd < n; winEnd++){
@@ -18,6 +18,6 @@ public:
                 winStart++;
             }
         }
-        return (minLength == n + 1)? 0 : minLength;
+        return (minLength == INT_MAX)? 0 : minLength;
     }
 };
