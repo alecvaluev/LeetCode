@@ -17,6 +17,7 @@ public:
         }
         return profit;*/
         
+        //more optimized for space
         int n = prices.size(),
             profit = 0,
             buy = prices[0];
