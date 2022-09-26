@@ -4,7 +4,7 @@ public:
         //brute force - calc every possible solution using 2 inner for-loops O(n^2) 
         //optimized - time O(n); - sliding window(Kadane's algo)
         
-        int n = prices.size(),
+        /*int n = prices.size(),
             profit = 0,
             dayBuy = 0;
             
@@ -14,6 +14,16 @@ public:
                 day++;
             }
             dayBuy = day;
+        }
+        return profit;*/
+        
+        int n = prices.size(),
+            profit = 0,
+            buy = prices[0];
+            
+        for(int day = 1; day < n; day++){
+            if(prices[day] - buy > profit) profit = prices[day] - buy;
+            if(prices[day] < buy) buy = prices[day];
         }
         return profit;
     }
