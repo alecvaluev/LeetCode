@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
+        //O(n) time O(1) space
         vector<char> newS;
         
         for(auto& c: s){
