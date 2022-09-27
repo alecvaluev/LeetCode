@@ -21,7 +21,7 @@ public:
                 newInterval = interval;
             }
             //overlap in 1 of 4 ways
-            else if(interval[1] >= newInterval[0] || interval[0] <= newInterval[1]){
+            else{
                 first = min(start, first);
                 last = max(end, last);
             }
