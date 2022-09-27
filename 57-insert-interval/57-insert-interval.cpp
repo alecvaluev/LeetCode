@@ -2,51 +2,32 @@ class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
         //time O(n) space O(n)
-        /*vector<vector<int>> answer;
+        vector<vector<int>> answer;
         
-        int first = newInterval[0],
-            last = newInterval[1];
+        int& first = newInterval[0],
+           & last = newInterval[1];
         
-        for(int i = 0; i < intervals.size(); i++){
-            int start = intervals[i][0],
-                end = intervals[i][1];
+        for(auto& interval: intervals){
+            int start = interval[0],
+                end = interval[1];
+            
             // no overlap
             if(end < first){
-                answer.push_back(intervals[i]);
+                answer.push_back(interval);
             }
             //no overlap
             else if (last < start){
                 answer.push_back(newInterval);
-                newInterval = intervals[i];
+                newInterval = interval;
             }
             //overlap in 1 of 4 ways
-            else{
-                newInterval[0] = min(start, first);
-                newInterval[1] = max(end, last);
+            else if(interval[1] >= newInterval[0] || interval[0] <= newInterval[1]){
+                first = min(start, first);
+                last = max(end, last);
             }
         }
         //push last interval it could be new or old interval
         answer.push_back(newInterval);
-        return answer;*/
-        int n = intervals.size()-1;
-        vector<vector<int>> res;
-        
-        for(int i = 0; i < intervals.size(); i++){
-            if(intervals[i][1] < newInterval[0]){
-                res.push_back(intervals[i]);
-            }
-            
-            else if(intervals[i][0] > newInterval[1]){
-                res.push_back(newInterval);
-                newInterval = intervals[i];
-            }
-            
-            else if(intervals[i][1] >= newInterval[0] || intervals[i][0] <= newInterval[1]){
-                newInterval[0] = min(intervals[i][0], newInterval[0]);
-                newInterval[1] = max(intervals[i][1], newInterval[1]);
-            }
-        }
-       res.push_back(newInterval);
-       return res;
+        return answer;
     }
 };
