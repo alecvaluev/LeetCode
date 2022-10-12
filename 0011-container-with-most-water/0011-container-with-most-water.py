@@ -1,5 +1,6 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
+        # O(n)
         l, r = 0, len(height) - 1
         area = 0
         
