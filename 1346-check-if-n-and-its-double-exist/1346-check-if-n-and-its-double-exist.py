@@ -1,5 +1,6 @@
 class Solution:
     def checkIfExist(self, arr: List[int]) -> bool:
+        # O(n) - TS
         seen = set()
         
         for num in arr:
