@@ -24,6 +24,8 @@ class Solution:
         #        dic[char] -= 1
         # 
         #return True
+        if ransomNote in magazine:
+            return True
         
         letters=list(set(ransomNote))
         for i in letters:
