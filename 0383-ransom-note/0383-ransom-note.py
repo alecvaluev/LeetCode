@@ -24,9 +24,8 @@ class Solution:
         #        dic[char] -= 1
         # 
         #return True
-        if ransomNote in magazine:
-            return True
         
+        # space O(m), time O(m)
         letters=list(set(ransomNote))
         for i in letters:
             if magazine.count(i)<ransomNote.count(i):
