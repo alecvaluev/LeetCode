@@ -9,18 +9,27 @@ class Solution:
         #        return False
         #return True
         
-        # space O(m)
-        dic = {}
-        for char in magazine:
-            if char not in dic:
-                dic[char] = 1
-            else:
-                dic[char] += 1
+        # space O(m), time O(m + n)
+        #dic = {}
+        #for char in magazine:
+        #    if char not in dic:
+        #        dic[char] = 1
+        #    else:
+        #        dic[char] += 1
         
-        for char in ransomNote:
-            if char not in dic or dic[char] == 0:
+        #for char in ransomNote:
+        #    if char not in dic or dic[char] == 0:
+        #        return False
+        #    else:
+        #        dic[char] -= 1
+        # 
+        #return True
+        
+        z=set(ransomNote)
+        z=list(z)
+        for i in z :
+            if magazine.count(i)<ransomNote.count(i):
                 return False
-            else:
-                dic[char] -= 1
-        
         return True
+        
+        
