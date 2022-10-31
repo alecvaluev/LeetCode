@@ -25,9 +25,8 @@ class Solution:
         # 
         #return True
         
-        z=set(ransomNote)
-        z=list(z)
-        for i in z :
+        letters=list(set(ransomNote))
+        for i in letters:
             if magazine.count(i)<ransomNote.count(i):
                 return False
         return True
